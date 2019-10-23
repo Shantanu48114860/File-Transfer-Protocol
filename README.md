@@ -9,23 +9,59 @@ The implementation does not have to conform to the FTP standard. Data and comman
 Java
 
 # How To Run
-cd <ProjectPath>/src
+cd ..ProjectPath/src
 
- # Compile:
+Compile:
 ——————————————
-javac com/UFL/FTPServer/FtpServer.java 
+Server ->  javac com/UFL/FTPServer/FtpServer.java 
 
-javac com/UFL/FTPClient/Client1/FtpClient.java 
+Client1 -> javac com/UFL/FTPClient/Client1/FtpClient.java 
 
-javac com/UFL/FTPClient/Client2/FtpClient.java
+Client2 -> javac com/UFL/FTPClient/Client2/FtpClient.java
 
 
 
 Run:
 ———————————————
-(Server) java com.UFL.FTPServer.FtpServer
+Server ->  java com.UFL.FTPServer.FtpServer
 
-java com.UFL.FTPClient.Client1.FtpClient
+Client1 -> java com.UFL.FTPClient.Client1.FtpClient
+
+Client2 -> java com.UFL.FTPClient.Client2.FtpClient
 
 
-java com.UFL.FTPClient.Client2.FtpClient
+
+# Test Cases
+1) Start the server
+
+2) Start client 1
+
+3) Start client 2
+
+4) Try an invalid command on one of the clients (other than "ftpclient <IP port>", "dir", "get <filename>" and "upload <filename>")
+
+5) Try one of the valid commands "dir", "get <filename>" and "upload <filename>"
+
+6) Try command "ftpclient <IP port>" with wrong IP or port number
+
+7) Command "ftpclient <IP port>" with correct IP and port number
+
+8) Try one of the commands "ftpclient <IP port>", "dir", "get <filename>" and "upload <filename>"
+
+9) Try logging in with the wrong username or password
+
+10) Login with correct username and password
+
+11) Try an invalid command on the client (other than "ftpclient <IP port>", "dir", "get <filename>" and "upload <filename>")
+
+12) Try command "ftpclient <IP port>"
+
+13) Try uploading a file that doesn’t exist
+
+14) Command “upload” for a valid file from client 1 to server
+
+15) Command “dir” from client 2
+
+16) Try “get” wrong file name
+
+17) Command “get” on client 2 for the file that client 1 uploaded to the server
