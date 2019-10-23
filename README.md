@@ -1,5 +1,5 @@
 # File Transfer Protocol(FTP)
-This is repository is created as a part of the project for Computer Networks (CNT5106C) in University of Florida Master's in Computer Science program
+This is repository is created as a part of the FTP project for Computer Networks (CNT5106C) in University of Florida for the  Master's in Computer Science program.
 
 # Description
 In this project, you will implement a simple version of FTP client/server software. It consists of two programs: ftpclient and ftpserver. First, the ftpserver is started on a computer. It listens on a certain TCP port. Then, the ftpclient is executed on the same or a different computer; the server’s address and port number are supplied in the command line, for example, “ftpclient sand.cise.ufl.edu 5106”. The client will prompt for username and password. After logon, the user can issue three commands at the client side: “dir” is to retrieve the list of file names available at the server, “get <filename>” is to retrieve a file from the server, and “upload < filename>” is to upload a file to the server.
