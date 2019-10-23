@@ -12,16 +12,16 @@ Java
 cd ..ProjectPath/src
 
 Compile: <br/> 
-Server ->  javac com/UFL/FTPServer/FtpServer.java 
-Client1 -> javac com/UFL/FTPClient/Client1/FtpClient.java 
-Client2 -> javac com/UFL/FTPClient/Client2/FtpClient.java
+Server ->  javac com/UFL/FTPServer/FtpServer.java <br/>
+Client1 -> javac com/UFL/FTPClient/Client1/FtpClient.java <br/>
+Client2 -> javac com/UFL/FTPClient/Client2/FtpClient.java <br/>
 
 
 
 Run: <br/>
-Server ->  java com.UFL.FTPServer.FtpServer
-Client1 -> java com.UFL.FTPClient.Client1.FtpClient
-Client2 -> java com.UFL.FTPClient.Client2.FtpClient
+Server ->  java com.UFL.FTPServer.FtpServer <br/>
+Client1 -> java com.UFL.FTPClient.Client1.FtpClient <br/>
+Client2 -> java com.UFL.FTPClient.Client2.FtpClient <br/>
 
 The username and password can be found at users.txt file under /src folder. Each pair of user name and password are mentioned in each line of the users.txt file.
 
@@ -62,9 +62,9 @@ The username and password can be found at users.txt file under /src folder. Each
 17) Command “get” on client 2 for the file that client 1 uploaded to the server
 
 # Warning
-Before connecting the client with the server, set the correct path to the variables "sharedPath" and "userList" in FTPServer.java file, else the client won't be able to connect to the server. 
-userList is the variable which contains the path of the file that maintains list of username and password.
-sharedPath is the variable which contains the path of the folder that is shared by the server to the client and where client can upload the files.
+Before connecting the client with the server, set the correct path to the variables "sharedPath" and "userList" in FTPServer.java file, else the client won't be able to connect to the server. <br/>
+"userList" is the variable which contains the path of the file that maintains list of username and password. <br/>
+"sharedPath" is the variable which contains the path of the folder that is shared by the server to the client and where client can upload the files. <br/>
 Unfortuenately these paths are hardcoded as per my machine.
 
 # Special mention
