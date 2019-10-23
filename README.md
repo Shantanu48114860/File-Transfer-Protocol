@@ -13,18 +13,14 @@ cd ..ProjectPath/src
 
 Compile: <br/> 
 Server ->  javac com/UFL/FTPServer/FtpServer.java 
-
 Client1 -> javac com/UFL/FTPClient/Client1/FtpClient.java 
-
 Client2 -> javac com/UFL/FTPClient/Client2/FtpClient.java
 
 
 
 Run: <br/>
 Server ->  java com.UFL.FTPServer.FtpServer
-
 Client1 -> java com.UFL.FTPClient.Client1.FtpClient
-
 Client2 -> java com.UFL.FTPClient.Client2.FtpClient
 
 The username and password can be found at users.txt file under /src folder. Each pair of user name and password are mentioned in each line of the users.txt file.
