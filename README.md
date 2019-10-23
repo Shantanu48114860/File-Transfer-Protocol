@@ -64,3 +64,9 @@ The username and password can be found at users.txt file under /src folder. Each
 16) Try “get” wrong file name
 
 17) Command “get” on client 2 for the file that client 1 uploaded to the server
+
+# Special Instruction
+Before connecting the client with the server, set the correct path to the variables "sharedPath" and "userList" in FTPServer.java file, else the client won't be able to connect to the server. 
+userList is the variable which contains the path of the file that maintains list of username and password.
+sharedPath is the variable which contains the path of the folder that is shared by the server to the client and where client can upload the files.
+Unfortuenately these paths are hardcoded as per mymachine.
