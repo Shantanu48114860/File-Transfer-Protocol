@@ -11,7 +11,7 @@ Java
 # How To Run
 cd ..ProjectPath/src
 
-Compile: <br/>
+Compile: <br/> <br/>
 Server ->  javac com/UFL/FTPServer/FtpServer.java 
 
 Client1 -> javac com/UFL/FTPClient/Client1/FtpClient.java 
@@ -20,7 +20,7 @@ Client2 -> javac com/UFL/FTPClient/Client2/FtpClient.java
 
 
 
-Run:
+Run: <br/> <br/>
 Server ->  java com.UFL.FTPServer.FtpServer
 
 Client1 -> java com.UFL.FTPClient.Client1.FtpClient
