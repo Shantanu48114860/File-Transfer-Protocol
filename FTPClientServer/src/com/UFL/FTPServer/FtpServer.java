@@ -4,7 +4,9 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * Ftp Server class that accepts clients and spawns a new thread for each client.
+ */
 public class FtpServer {
     public static void main(String[] args) throws Exception {
         ServerSocket server = new ServerSocket(4000);
@@ -20,6 +22,9 @@ public class FtpServer {
     }
 }
 
+/**
+ * Ftp server thread class
+ */
 class CNFTPServerRun extends Thread {
     Socket clientSocket;
     DataInputStream inputStream;
@@ -28,6 +33,12 @@ class CNFTPServerRun extends Thread {
     String clientName;
     String sharedPath = "/Users/shantanughosh/Desktop/Shantanu_MS/Fall 19/CN/Projects/FTP_Project/File_Transfer_Protocol/FTPClientServer/src/Test Folder/Server";
 
+    /**
+     * Instantiates Server thread and accepts new client socket.
+     *
+     * @param soc        client socket
+     * @param _clientNum client id
+     */
     CNFTPServerRun(Socket soc, int _clientNum) {
         try {
             clientSocket = soc;
@@ -43,6 +54,9 @@ class CNFTPServerRun extends Thread {
         }
     }
 
+    /**
+     * Overrides run method of the thread class to spawn new thread.
+     */
     public void run() {
         authenticateClient();
         try {
@@ -86,13 +100,16 @@ class CNFTPServerRun extends Thread {
         }
     }
 
+    /**
+     * Authenticates new client by validating correct id and password.
+     */
     private void authenticateClient() {
         while (true) {
             try {
                 String userName = inputStream.readUTF().trim();
                 String password = inputStream.readUTF();
                 File userList =
-                        new File("/Users/shantanughosh/Desktop/Shantanu_MS/Fall 19/CN/Projects/FTP_Project/File_Transfer_Protocol/FTPClientServer/src/users.txt");
+                        new File("/Users/shantanughosh/Desktop/Shantanu_MS/Fall_19/CN/Projects/FTP_Project1/File-Transfer-Protocol/FTPClientServer/src/users.txt");
                 FileInputStream inp = new FileInputStream(userList);
                 DataInputStream dis = new DataInputStream(inp);
                 String lines;
@@ -125,6 +142,11 @@ class CNFTPServerRun extends Thread {
         }
     }
 
+    /**
+     * Browses the shared directory of the server.
+     *
+     * @throws Exception
+     */
     private void browseDir() throws Exception {
         File folder = new File(sharedPath);
         ArrayList<String> files = new ArrayList<String>();
@@ -154,6 +176,11 @@ class CNFTPServerRun extends Thread {
         return;
     }
 
+    /**
+     * Performs upload operation from clients.
+     *
+     * @throws Exception
+     */
     private void getFileFromClient() throws Exception {
         String fileFromClient = inputStream.readUTF();
         if (fileFromClient.compareTo("File not found") == 0) {
@@ -178,6 +205,12 @@ class CNFTPServerRun extends Thread {
         }
     }
 
+    /**
+     * Writes the file that is uploaded by the client in the disk of the server.
+     *
+     * @param fileToSave file to save in the server
+     * @throws Exception
+     */
     private void writeFile(File fileToSave) throws Exception {
         FileOutputStream fileOutputStream = new FileOutputStream(fileToSave);
         int ch;
@@ -194,6 +227,11 @@ class CNFTPServerRun extends Thread {
         outputStream.writeUTF(responseFromServer);
     }
 
+    /**
+     * Sends the file to the client which will be downloaded by the client.
+     *
+     * @throws Exception
+     */
     private void sendFileToClient() throws Exception {
         File fileToSend = new File(sharedPath + "/" +
                 inputStream.readUTF());
@@ -209,6 +247,12 @@ class CNFTPServerRun extends Thread {
         }
     }
 
+    /**
+     * reads the file which will be downloaded by the client.
+     *
+     * @param file file to be downloaded by the client
+     * @throws Exception
+     */
     private void readfile(File file) throws Exception {
         FileInputStream fin = new FileInputStream(file);
         int ch;
